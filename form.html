@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Design with Table Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-spacing: 20px;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #00A86B;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .inline-upload-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .upload-box-inline {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            background-color: #f9f9f9;
+            border: 2px dashed #00A86B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .upload-box-inline:hover {
+            background-color: #f0f0f0;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .upload-text-inline {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .note {
+            font-size: 12px;
+            color: grey;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .declaration {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-label input {
+            margin-right: 10px;
+        }
+
+        .order-list {
+            margin: 20px 0;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label for="country">Select country</label>
+                    <select id="country" name="country">
+                        <option>Select country</option>
+                        <option>Pakistan</option>
+                        <option>Turkey</option>
+                    </select>
+                </td>
+                <td>
+                    <label for="city">Select city</label>
+                    <select id="city" name="city">
+                        <option>Select city</option>
+                        <option>Karachi</option>
+                        <option>Faisalabad</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="course">Select course or event</label>
+                    <select id="course" name="course">
+                        <option>Select course or event</option>
+                        <option>Modern Web Development</option>
+                        <option>Web Designing</option>
+                    </select>
+                </td>
+                <td>
+                    <label for="proficiency">Select your computer proficiency</label>
+                    <select id="proficiency" name="proficiency">
+                        <option>Select your computer proficiency</option>
+                        <option>None</option>
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="full-name">Full name</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="Full name">
+                </td>
+                <td>
+                    <label for="father-name">Father's name</label>
+                    <input type="text" id="father-name" name="father-name" placeholder="Father name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email">
+                </td>
+                <td>
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="cnic">CNIC</label>
+                    <input type="text" id="cnic" name="cnic" placeholder="CNIC">
+                </td>
+                <td>
+                    <label for="father-cnic">Father's CNIC (optional)</label>
+                    <input type="text" id="father-cnic" name="father-cnic" placeholder="Father's CNIC (optional)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dob">Date of birth</label>
+                    <input type="date" id="dob" name="dob">
+                </td>
+                <td>
+                    <label for="gender">Select gender</label>
+                    <select id="gender" name="gender">
+                        <option>Select gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Address">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="qualification">Last qualification</label>
+                    <input type="text" id="qualification" name="qualification" placeholder="Last qualification">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="laptop">Do you have a Laptop?</label>
+                    <select id="laptop" name="laptop">
+                        <option value="">Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="picture">Picture</label>
+                    <div class="inline-upload-container">
+                        <label class="upload-box-inline" for="file-upload">
+                            <div>+ Upload</div>
+                        </label>
+                        <input type="file" id="file-upload" class="file-input" accept="image/*">
+                        <div class="upload-text-inline">
+                            With white or blue background<br>
+                            File size must be less than 1MB<br>
+                            File type: jpg, jpeg, png<br>
+                            Upload your recent passport size picture<br>
+                            Your face should be clearly visible without any glasses
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <div class="order-list">
+            <ol>
+                <li>I hereby, solemnly declare that the data and facts mentioned herein are true and correct to the best
+                    of my knowledge. Further, I will abide by all the established and future regulations and policies of
+                    SWIT.</li>
+                <li>I hereby accept the responsibilities of good conduct and guarantee that I will not be involved in
+                    any other activity, political or ethical, but learning during my stay in the program.</li>
+                <li>Defiance will render my admission canceled at any point in time.</li>
+                <li>Upon completion of the course, I will complete the required project by SWIT.</li>
+                <li>It's mandatory for female students to wear abaya/hijab in the class.</li>
+            </ol>
+        </div>
+
+        <div class="checkbox-label">
+            <input type="checkbox" id="accept-responsibilities" name="accept-responsibilities" required>
+            <label for="accept-responsibilities">I accept the responsibilities stated above.</label>
+        </div>
+
+        <button type="submit" class="submit-btn">SUBMIT</button>
+    </form>
+
+</body>
+
+</html>
